@@ -1,19 +1,40 @@
 <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="container header__container">
+      <a href="/" class="logo">Gradiq<span>-</span>Ova</a>
+
+      <nav class="nav">
+          <ul class="nav__list">
+              <li><a href="#" class="nav__link">Главная</a></li>
+              <li><a href="#services" class="nav__link">Услуги</a></li>
+              <li><a href="#cases" class="nav__link">Кейсы</a></li>
+              <li><a href="#innovations" class="nav__link">Инновации</a></li>
+              <li><a href="#blog" class="nav__link">Блог</a></li>
+          </ul>
+      </nav>
+
+      <div class="header__actions">
+          <a href="#contact" class="btn btn--primary hide-mobile">Связаться</a>
+          <button class="burger" id="burger" aria-label="Открыть меню">
+              <span></span>
+          </button>
+      </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu__backdrop" id="menu-backdrop"></div>
+      <div class="mobile-menu__content">
+          <div class="mobile-menu__header">
+              <div class="logo">Gradiq<span>-</span>Ova</div>
+              <button class="close-menu" id="close-menu">&times;</button>
+          </div>
+          <ul class="mobile-menu__list">
+              <li><a href="#" class="mobile-link">Главная</a></li>
+              <li><a href="#services" class="mobile-link">Услуги</a></li>
+              <li><a href="#cases" class="mobile-link">Кейсы</a></li>
+              <li><a href="#innovations" class="mobile-link">Инновации</a></li>
+              <li><a href="#blog" class="mobile-link">Блог</a></li>
+              <li><a href="#contact" class="mobile-link btn btn--primary">Начать сейчас</a></li>
+          </ul>
+      </div>
   </div>
 </header>
