@@ -1325,3 +1325,179 @@ html, body {
   margin-top: 10px;
   text-align: center;
 }
+/* --- Стили для юридических страниц --- */
+.pages {
+  padding: 120px 0 80px;
+  background-color: var(--color-bg);
+  min-height: 80vh;
+}
+
+.pages h1 {
+  font-family: var(--font-accent);
+  font-size: 2.5rem;
+  color: var(--color-dark);
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.pages h2 {
+  font-family: var(--font-accent);
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  margin: 35px 0 15px;
+}
+
+.pages p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.pages ul {
+  margin-bottom: 25px;
+  list-style: none;
+}
+
+.pages ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.pages ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .pages { padding: 100px 0 60px; }
+  .pages h1 { font-size: 1.8rem; }
+}
+/* --- Стилизация страниц (Юридические тексты) --- */
+.container--narrow {
+  max-width: 850px; /* Узкая колонка для удобства чтения текста */
+}
+
+.pages__header {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.pages__tag {
+  display: inline-block;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.pages h1 {
+  font-family: var(--font-accent);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.pages h2 {
+  font-family: var(--font-accent);
+  font-size: 1.6rem;
+  color: var(--color-dark);
+  margin: 45px 0 20px;
+  padding-left: 15px;
+  border-left: 4px solid var(--color-primary); /* Акцентная линия Clay */
+}
+
+.pages p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 25px;
+  opacity: 0.85;
+}
+
+.pages__list {
+  margin: 25px 0 35px;
+}
+
+.pages__list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pages__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 2px;
+  background-color: var(--color-primary); /* Clay акцент */
+}
+
+.pages__list strong {
+  color: var(--color-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pages__link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.pages__link:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* Анимация появления */
+.pages .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.pages .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .pages { padding: 80px 0; }
+  .pages h2 { font-size: 1.4rem; }
+}
+/* Фикс для страниц политик: делаем контент видимым по умолчанию
+   или убираем сложную анимацию для текстовых страниц */
+
+   .pages .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Если вы хотите оставить анимацию, но боитесь зависаний JS: */
+@media (max-width: 768px) {
+    .reveal {
+        /* На мобильных лучше показывать контент сразу,
+           чтобы не зависеть от точности работы скролла */
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
